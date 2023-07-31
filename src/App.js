@@ -8,6 +8,8 @@ import Tab1 from './components/Tab1/Tab1';
 import Tab2 from './components/Tab2/Tab2';
 import Tab1_DS from './components/Tab1_DS/Tab1_DS';
 import Tab2_DS from './components/Tab2_DS/Tab2_DS';
+import KakaoMap2 from './KakaoMap2';
+import { MyContextProvider } from './MyContextProvider';
 
 function App() {
   const [isTab1Open, setIsTab1Open] = useState(false);
@@ -61,6 +63,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <MyContextProvider>
       <div className="App">
         {/* <Nav /> */}
 
@@ -89,10 +92,11 @@ function App() {
         
 
         <Routes>
-          <Route path="/" exact element={<Main />}/>
+          <Route path="/" exact element={<KakaoMap2/>}/>
           <Route path="/login" exact element={<LoginPage />}/>
         </Routes>
       </div>
+      </MyContextProvider>
     </BrowserRouter>
   );
 }
